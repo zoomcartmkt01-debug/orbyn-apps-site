@@ -1,0 +1,11 @@
+# ORBYN TECH Apps
+
+> Apps by ORBYN TECH, a brand of LCH NETWORK MARKETING. Contact: admin@lchnetmarketing.com.
+
+## Apps and policies
+
+- [App collection](https://apps.lchnetmarketing.com/): The ORBYN TECH app list.
+- [STCW Tracker](https://apps.lchnetmarketing.com/stcw-tracker/): Track STCW certificates, expiry dates and sea service. Offline and private.
+- [STCW Tracker privacy policy](https://apps.lchnetmarketing.com/stcw-tracker/privacy/): Local data, reminders, app lock, exports, purchases and deletion. Effective 20 October 2026.
+- [STCW Tracker terms of use](https://apps.lchnetmarketing.com/stcw-tracker/terms/): App use and user responsibilities. Effective 20 October 2026.
+- [Site Measure Check: Room QA privacy policy](https://apps.lchnetmarketing.com/site-measure-check/privacy/): Site Measure Check records local room observations, evaluates declared measurement relationships, and prepares a revision-bound handoff PDF when readiness conditions pass. Privacy policy effective 19 October 2026.
