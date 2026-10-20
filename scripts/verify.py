@@ -7,11 +7,12 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://apps.lchnetmarketing.com'
 POLICIES = {
+ 'watt-to-amp/privacy/index.html': ('watt-to-amp/PRIVACY-POLICY-EN.md', '[DATE OF PUBLICATION]', '21 October 2026'),
  'stcw-tracker/privacy/index.html': ('stcw-tracker/PRIVACY-POLICY-EN.md', '[DATE OF PUBLICATION]', '20 October 2026'),
  'stcw-tracker/terms/index.html': ('stcw-tracker/TERMS-EN.md', '[DATE OF PUBLICATION]', '20 October 2026'),
  'site-measure-check/privacy/index.html': ('app-003/APP-003-Privacy-Policy-EN-Draft.md', '[DD Month YYYY]', '19 October 2026'),
 }
-PAGES = ['index.html', 'stcw-tracker/index.html', *POLICIES, '404.html']
+PAGES = ['index.html', 'stcw-tracker/index.html', 'watt-to-amp/index.html', *POLICIES, '404.html']
 def norm(s): return ' '.join(s.split())
 def plain_markdown(s):
  s = re.sub(r'^\s*(?:[-*]|\d+\.)\s+', '', s, flags=re.M)
@@ -58,7 +59,10 @@ def verify(source_root=None):
    source,placeholder,date=POLICIES[name]
    snapshot=(ROOT/'policy-sources'/source).read_text(encoding='utf-8')
    if source_root: assert snapshot==(source_root/source).read_text(encoding='utf-8'), source
-   assert norm(''.join(p.text))==plain_markdown(snapshot.replace(placeholder,date)), f'Policy wording differs: {name}'
+   expected_text=plain_markdown(snapshot.replace(placeholder,date))
+   if source.startswith('watt-to-amp/'):
+    expected_text=norm(re.sub(r'^#{1,6}\s+', '', snapshot, flags=re.M))
+   assert norm(''.join(p.text))==expected_text, f'Policy wording differs: {name}'
    assert date in ''.join(p.text) and placeholder not in html, name
    data=re.search(r'<script type="application/ld\+json">(.*?)</script>',html,re.S)
    assert data, name
@@ -72,9 +76,33 @@ def verify(source_root=None):
  expected={BASE+'/'+n.removesuffix('index.html') for n in PAGES if n!='404.html'}
  assert urls==expected, 'Sitemap URLs differ'
  llms=(ROOT/'llms.txt').read_text(encoding='utf-8')
- assert not any(w in llms.lower() for w in ['draft','watt','/apps/','pending'])
+ assert not any(w in llms.lower() for w in ['draft','/apps/','pending'])
  assert all(url in llms for url in expected)
+ verify_watt()
  print(f'PASS {len(PAGES)} pages: metadata, footer, links, no executable scripts; CNAME, sitemap, robots, llms.txt')
+def verify_watt():
+ from html import escape
+ from math import sqrt
+ html=(ROOT/'watt-to-amp/index.html').read_text(encoding='utf-8')
+ schemas=[json.loads(s) for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>',html,re.S)]
+ assert len(schemas)==2, 'Expected SoftwareApplication and FAQPage'
+ app,faq=schemas
+ assert app['@type']=='SoftwareApplication' and app['applicationCategory']=='UtilitiesApplication'
+ assert app['operatingSystem']=='Android' and float(app['offers']['price'])==0
+ assert app['url']==BASE+'/watt-to-amp/'
+ assert faq['@type']=='FAQPage' and len(faq['mainEntity'])>=6
+ for item in faq['mainEntity']:
+  assert item['@type']=='Question' and item['acceptedAnswer']['@type']=='Answer'
+  assert '<h3>'+escape(item['name'])+'</h3>' in html, 'FAQ question not visible'
+  assert '<p>'+escape(item['acceptedAnswer']['text'])+'</p>' in html, 'FAQ answer differs from visible text'
+ answers=' '.join(i['acceptedAnswer']['text'] for i in faq['mainEntity'])
+ for value in ['120 W', '12 V', '10 A', '15 kW', '400 V', '0.85', '25.47 A', '2,200', '1,000', '700 W', '230 V', '16.96 A', '20 A', '84.8%']:
+  assert value in answers, f'Missing approved example: {value}'
+ assert round(120/12,2)==10 and round(15000/(sqrt(3)*400*.85),2)==25.47
+ assert round((2200+1000+700)/230,2)==16.96 and round((2200+1000+700)/230/20*100,1)==84.8
+ assert 'href="/watt-to-amp/"' in (ROOT/'index.html').read_text(encoding='utf-8')
+ print('PASS Watt to Amp: free Android app schema, visible matching FAQ, approved calculations, homepage link')
+
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--source-root',type=Path)

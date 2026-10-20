@@ -9,3 +9,6 @@
 - [STCW Tracker privacy policy](https://apps.lchnetmarketing.com/stcw-tracker/privacy/): Local data, reminders, app lock, exports, purchases and deletion. Effective 20 October 2026.
 - [STCW Tracker terms of use](https://apps.lchnetmarketing.com/stcw-tracker/terms/): App use and user responsibilities. Effective 20 October 2026.
 - [Site Measure Check: Room QA privacy policy](https://apps.lchnetmarketing.com/site-measure-check/privacy/): Site Measure Check records local room observations, evaluates declared measurement relationships, and prepares a revision-bound handoff PDF when readiness conditions pass. Privacy policy effective 19 October 2026.
+
+- [Watt to Amp Calculator](https://apps.lchnetmarketing.com/watt-to-amp/): DC, single-phase and three-phase current calculations, power factor and circuit load checks. Free with ads; optional one-time Pro. Reference only.
+- [Watt to Amp Calculator privacy policy](https://apps.lchnetmarketing.com/watt-to-amp/privacy/): Local calculations and projects, Google Mobile Ads and consent, purchases and PDF reports. Effective 21 October 2026.
