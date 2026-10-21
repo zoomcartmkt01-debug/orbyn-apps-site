@@ -7,6 +7,9 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://apps.lchnetmarketing.com'
 POLICIES = {
+ 'watt-to-amp/terms/index.html': ('watt-to-amp/TERMS-EN.md', '[DATE OF PUBLICATION]', '21 October 2026'),
+ 'site-measure-check/terms/index.html': ('app-003/TERMS-EN.md', '[DATE OF PUBLICATION]', '21 October 2026'),
+ 'steel-weight/terms/index.html': ('steel-weight/TERMS-EN.md', '[DATE OF PUBLICATION]', '21 October 2026'),
  'watt-to-amp/privacy/index.html': ('watt-to-amp/PRIVACY-POLICY-EN.md', '[DATE OF PUBLICATION]', '21 October 2026'),
  'stcw-tracker/privacy/index.html': ('stcw-tracker/PRIVACY-POLICY-EN.md', '[DATE OF PUBLICATION]', '20 October 2026'),
  'stcw-tracker/terms/index.html': ('stcw-tracker/TERMS-EN.md', '[DATE OF PUBLICATION]', '20 October 2026'),

@@ -12,3 +12,7 @@
 
 - [Watt to Amp Calculator](https://apps.lchnetmarketing.com/watt-to-amp/): DC, single-phase and three-phase current calculations, power factor and circuit load checks. Free with ads; optional one-time Pro. Reference only.
 - [Watt to Amp Calculator privacy policy](https://apps.lchnetmarketing.com/watt-to-amp/privacy/): Local calculations and projects, Google Mobile Ads and consent, purchases and PDF reports. Effective 21 October 2026.
+
+- Terms of Use: https://apps.lchnetmarketing.com/watt-to-amp/terms/
+- Terms of Use: https://apps.lchnetmarketing.com/site-measure-check/terms/
+- Terms of Use: https://apps.lchnetmarketing.com/steel-weight/terms/
