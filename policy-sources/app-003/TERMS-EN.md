@@ -3,7 +3,7 @@
 Effective date: 21 October 2026
 
 ## 1. Operator
-ORBYN Tech is a technology brand operated by LCH NETWORK MARKETING, a Malaysian sole proprietorship (SSM Registration No. 201403064285 (NS0127606-H)), No. 12, Jalan Lenggeng, Taman Pelangi Indah, 71700 Mantin, Negeri Sembilan, Malaysia. In these terms, "we", "us" and "our" mean this operator.
+ORBYN Tech is a technology brand operated by LCH NETWORK MARKETING, a Malaysian sole proprietorship (SSM Registration No. 201403064285 (NS0127606-H)), No. 12, Jalan Lenggeng, Taman Pelangi Indah, 71700 Mantin, Negeri Sembilan, Malaysia.
 
 ## 2. Purpose and limits
 Site Measure Check provides calculation, measurement-record or material-estimation tools for reference. Results are estimates, not a substitute for a qualified professional's design, calculations, site assessment or checks of compliance with applicable standards. Independently verify results before ordering materials, cutting, construction, installation or wiring. The App does not certify safety, structural adequacy, fitness for fabrication or regulatory compliance.
