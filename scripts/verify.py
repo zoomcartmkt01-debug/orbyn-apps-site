@@ -13,7 +13,7 @@ POLICIES = {
  'watt-to-amp/privacy/index.html': ('watt-to-amp/PRIVACY-POLICY-EN.md', '[DATE OF PUBLICATION]', '21 October 2026'),
  'stcw-tracker/privacy/index.html': ('stcw-tracker/PRIVACY-POLICY-EN.md', '[DATE OF PUBLICATION]', '20 October 2026'),
  'stcw-tracker/terms/index.html': ('stcw-tracker/TERMS-EN.md', '[DATE OF PUBLICATION]', '20 October 2026'),
- 'site-measure-check/privacy/index.html': ('app-003/APP-003-Privacy-Policy-EN-Draft.md', '[DD Month YYYY]', '19 October 2026'),
+ 'site-measure-check/privacy/index.html': ('app-003/APP-003-Privacy-Policy-EN-R2-PRO.md', '[set on the day the Pro version is published]', '27 October 2026'),
 }
 PAGES = ['index.html', 'stcw-tracker/index.html', 'watt-to-amp/index.html', *POLICIES, '404.html']
 def norm(s): return ' '.join(s.split())
